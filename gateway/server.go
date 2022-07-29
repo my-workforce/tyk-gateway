@@ -182,8 +182,9 @@ type Gateway struct {
 	templatesRaw *textTemplate.Template
 
 	// RedisController keeps track of redis connection and singleton
-	RedisController *storage.RedisController
-	hostDetails     hostDetails
+	RedisController storage.Handler
+
+	hostDetails hostDetails
 
 	healthCheckInfo atomic.Value
 
@@ -296,6 +297,12 @@ func (gw *Gateway) apisByIDLen() int {
 	return len(gw.apisByID)
 }
 
+// define valid storage drivers
+var validStorageDrivers = []string{"redis", "redis7"}
+
+// define allowed storage drivers for analytics
+var validStorageDriversForAnalytics = []string{"redis", "redis7"}
+
 // Create all globals and init connection handlers
 func (gw *Gateway) setupGlobals() {
 	gw.reloadMu.Lock()
@@ -313,8 +320,8 @@ func (gw *Gateway) setupGlobals() {
 			time.Duration(gwConfig.DnsCache.CheckInterval)*time.Second)
 	}
 
-	if gwConfig.EnableAnalytics && gwConfig.Storage.Type != "redis" {
-		mainLog.Fatal("Analytics requires Redis Storage backend, please enable Redis in the tyk.conf file.")
+	if gwConfig.EnableAnalytics && contains(validStorageDriversForAnalytics, gwConfig.Storage.Type) {
+		mainLog.Fatalf("Analytics storage details incorrect, invalid type %q. Supported storage types for analytics are: %s", gwConfig.Storage.Type, strings.Join(validStorageDriversForAnalytics, ", "))
 	}
 
 	// Initialise HostCheckerManager only if uptime tests are enabled.
@@ -1162,8 +1169,8 @@ func (gw *Gateway) initialiseSystem() error {
 		}
 	}
 
-	if gwConfig.Storage.Type != "redis" {
-		mainLog.Fatal("Redis connection details not set, please ensure that the storage type is set to Redis and that the connection parameters are correct.")
+	if !contains(validStorageDrivers, gwConfig.Storage.Type) {
+		mainLog.Fatalf("Storage details incorrect, invalid type %q. Available storage types are: %s", gwConfig.Storage.Type, strings.Join(validStorageDrivers, ", "))
 	}
 
 	// suply rpc client globals to join it main loging and instrumentation sub systems
