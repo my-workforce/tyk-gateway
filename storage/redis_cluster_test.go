@@ -4,29 +4,12 @@ import (
 	"context"
 	"errors"
 	"testing"
-	"time"
 
 	"github.com/go-redis/redis/v8"
 
 	"github.com/TykTechnologies/tyk/config"
 	"github.com/stretchr/testify/assert"
 )
-
-var rc *RedisController
-
-func init() {
-	conf := config.Default
-
-	rc = NewRedisController(context.Background())
-	go rc.Connect(context.Background(), nil, &conf)
-	for {
-		if rc.Connected() {
-			break
-		}
-
-		time.Sleep(10 * time.Millisecond)
-	}
-}
 
 func TestHandleMessage(t *testing.T) {
 	cluster := &RedisCluster{}
@@ -68,9 +51,10 @@ func TestHandleReceive(t *testing.T) {
 }
 
 func TestRedisClusterGetMultiKey(t *testing.T) {
+	ctx := context.Background()
 
 	keys := []string{"first", "second"}
-	r := RedisCluster{KeyPrefix: "test-cluster", RedisController: rc}
+	r := RedisCluster{KeyPrefix: "test-cluster", RedisController: rc(ctx, nil)}
 	for _, v := range keys {
 		r.DeleteKey(v)
 	}
@@ -155,7 +139,9 @@ func TestRedisAddressConfiguration(t *testing.T) {
 }
 
 func TestRedisExpirationTime(t *testing.T) {
-	storage := &RedisCluster{KeyPrefix: "test-", RedisController: rc}
+	ctx := context.Background()
+
+	storage := &RedisCluster{KeyPrefix: "test-", RedisController: rc(ctx, nil)}
 
 	testKey := "test-key"
 	testValue := "test-value"
