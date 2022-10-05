@@ -27,15 +27,17 @@ import (
 
 	"github.com/TykTechnologies/tyk/apidef/oas"
 
-	"github.com/TykTechnologies/graphql-go-tools/pkg/engine/resolve"
 	"github.com/cenk/backoff"
+
+	"github.com/TykTechnologies/graphql-go-tools/pkg/engine/resolve"
 
 	"github.com/Masterminds/sprig/v3"
 
-	circuit "github.com/TykTechnologies/circuitbreaker"
-	"github.com/TykTechnologies/graphql-go-tools/pkg/graphql"
 	"github.com/gorilla/mux"
 	"github.com/sirupsen/logrus"
+
+	circuit "github.com/TykTechnologies/circuitbreaker"
+	"github.com/TykTechnologies/graphql-go-tools/pkg/graphql"
 
 	"github.com/TykTechnologies/gojsonschema"
 

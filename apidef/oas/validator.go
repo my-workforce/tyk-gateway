@@ -11,10 +11,11 @@ import (
 
 	"github.com/buger/jsonparser"
 
-	logger "github.com/TykTechnologies/tyk/log"
 	"github.com/hashicorp/go-multierror"
 	"github.com/hashicorp/go-version"
 	"github.com/xeipuuv/gojsonschema"
+
+	logger "github.com/TykTechnologies/tyk/log"
 )
 
 //go:embed schema/*
