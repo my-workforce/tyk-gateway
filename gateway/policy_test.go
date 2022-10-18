@@ -14,7 +14,7 @@ import (
 
 	"github.com/TykTechnologies/tyk/config"
 
-	"github.com/TykTechnologies/graphql-go-tools/pkg/graphql"
+	"github.com/wundergraph/graphql-go-tools/pkg/graphql"
 
 	"github.com/lonelycode/go-uuid/uuid"
 	"github.com/stretchr/testify/assert"

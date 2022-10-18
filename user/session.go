@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/TykTechnologies/graphql-go-tools/pkg/graphql"
+	"github.com/wundergraph/graphql-go-tools/pkg/graphql"
 
 	logger "github.com/TykTechnologies/tyk/log"
 )

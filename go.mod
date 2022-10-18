@@ -13,8 +13,7 @@ require (
 	github.com/TykTechnologies/gojsonschema v0.0.0-20170222154038-dcb3e4bb7990
 	github.com/TykTechnologies/gorpc v0.0.0-20190515174534-b9c10befc5f4
 	github.com/TykTechnologies/goverify v0.0.0-20220808203004-1486f89e7708
-	// github.com/TykTechnologies/graphql-go-tools v1.6.2-0.20221012143123-be910dea323d
-	github.com/wundergraph/graphql-go-tools v1.58.0
+	github.com/TykTechnologies/graphql-go-tools v1.6.2-0.20221012143123-be910dea323d
 	github.com/TykTechnologies/leakybucket v0.0.0-20170301023702-71692c943e3c
 	github.com/TykTechnologies/murmur3 v0.0.0-20180602122059-1915e687e465
 	github.com/TykTechnologies/openid2go v0.1.2
@@ -34,7 +33,7 @@ require (
 	github.com/golang/protobuf v1.5.2
 	github.com/google/uuid v1.3.0 // indirect
 	github.com/gorilla/mux v1.8.0
-	github.com/gorilla/websocket v1.4.2
+	github.com/gorilla/websocket v1.5.0
 	github.com/hashicorp/consul/api v1.3.0
 	github.com/hashicorp/go-multierror v1.1.1
 	github.com/hashicorp/go-version v1.4.0
@@ -50,7 +49,7 @@ require (
 	github.com/miekg/dns v1.0.14
 	github.com/mitchellh/copystructure v1.2.0 // indirect
 	github.com/mitchellh/mapstructure v1.4.1
-	github.com/nats-io/nats-server/v2 v2.3.4 // indirect
+	github.com/nats-io/jwt v1.2.2 // indirect
 	github.com/newrelic/go-agent v2.13.0+incompatible
 	github.com/nsf/jsondiff v0.0.0-20210303162244-6ea32392771e
 	github.com/opentracing/opentracing-go v1.2.0
@@ -65,10 +64,11 @@ require (
 	github.com/sirupsen/logrus v1.8.1
 	github.com/spf13/afero v1.6.0
 	github.com/square/go-jose v2.4.1+incompatible
-	github.com/stretchr/testify v1.7.0
+	github.com/stretchr/testify v1.7.1
 	github.com/uber/jaeger-client-go v2.20.0+incompatible
 	github.com/valyala/fasthttp v1.15.1
 	github.com/vmihailenco/msgpack v4.0.4+incompatible
+	github.com/wundergraph/graphql-go-tools v1.58.0
 	github.com/x-cray/logrus-prefixed-formatter v0.5.2
 	github.com/xeipuuv/gojsonschema v1.2.0
 	golang.org/x/crypto v0.0.0-20220513210258-46612604a0f9

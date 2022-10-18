@@ -10,8 +10,8 @@ import (
 	"github.com/jensneuse/abstractlogger"
 	"github.com/sirupsen/logrus"
 
-	"github.com/TykTechnologies/graphql-go-tools/pkg/engine/resolve"
-	"github.com/TykTechnologies/graphql-go-tools/pkg/execution/datasource"
+	"github.com/wundergraph/graphql-go-tools/pkg/engine/resolve"
+	"github.com/wundergraph/graphql-go-tools/pkg/execution/datasource"
 
 	"github.com/TykTechnologies/tyk/apidef"
 	"github.com/TykTechnologies/tyk/apidef/adapter"
@@ -20,7 +20,7 @@ import (
 	"github.com/TykTechnologies/tyk/header"
 	"github.com/TykTechnologies/tyk/user"
 
-	gql "github.com/TykTechnologies/graphql-go-tools/pkg/graphql"
+	gql "github.com/wundergraph/graphql-go-tools/pkg/graphql"
 )
 
 const (

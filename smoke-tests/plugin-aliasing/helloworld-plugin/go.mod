@@ -27,4 +27,4 @@ require (
 	golang.org/x/crypto v0.0.0-20210616213533-5ff15b29337e // indirect
 )
 
-replace github.com/jensneuse/graphql-go-tools => github.com/TykTechnologies/graphql-go-tools v1.6.2-0.20210609111804-af8c15678972
+replace github.com/jensneuse/graphql-go-tools => github.com/wundergraph/graphql-go-tools v1.6.2-0.20210609111804-af8c15678972

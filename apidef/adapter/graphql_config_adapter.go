@@ -8,12 +8,12 @@ import (
 	"sort"
 	"strings"
 
-	graphqlDataSource "github.com/TykTechnologies/graphql-go-tools/pkg/engine/datasource/graphql_datasource"
-	"github.com/TykTechnologies/graphql-go-tools/pkg/engine/datasource/httpclient"
-	kafkaDataSource "github.com/TykTechnologies/graphql-go-tools/pkg/engine/datasource/kafka_datasource"
-	restDataSource "github.com/TykTechnologies/graphql-go-tools/pkg/engine/datasource/rest_datasource"
-	"github.com/TykTechnologies/graphql-go-tools/pkg/engine/plan"
-	"github.com/TykTechnologies/graphql-go-tools/pkg/graphql"
+	graphqlDataSource "github.com/wundergraph/graphql-go-tools/pkg/engine/datasource/graphql_datasource"
+	"github.com/wundergraph/graphql-go-tools/pkg/engine/datasource/httpclient"
+	kafkaDataSource "github.com/wundergraph/graphql-go-tools/pkg/engine/datasource/kafka_datasource"
+	restDataSource "github.com/wundergraph/graphql-go-tools/pkg/engine/datasource/rest_datasource"
+	"github.com/wundergraph/graphql-go-tools/pkg/engine/plan"
+	"github.com/wundergraph/graphql-go-tools/pkg/graphql"
 
 	"github.com/TykTechnologies/tyk/apidef"
 )

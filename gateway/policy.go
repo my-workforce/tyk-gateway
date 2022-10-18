@@ -8,7 +8,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/TykTechnologies/graphql-go-tools/pkg/graphql"
+	"github.com/wundergraph/graphql-go-tools/pkg/graphql"
 
 	"github.com/TykTechnologies/tyk/rpc"
 

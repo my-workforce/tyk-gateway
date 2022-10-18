@@ -31,9 +31,9 @@ import (
 	"github.com/gorilla/websocket"
 	"github.com/jensneuse/abstractlogger"
 
-	"github.com/TykTechnologies/graphql-go-tools/pkg/graphql"
-	gqlhttp "github.com/TykTechnologies/graphql-go-tools/pkg/http"
-	"github.com/TykTechnologies/graphql-go-tools/pkg/subscription"
+	"github.com/wundergraph/graphql-go-tools/pkg/graphql"
+	gqlhttp "github.com/wundergraph/graphql-go-tools/pkg/http"
+	"github.com/wundergraph/graphql-go-tools/pkg/subscription"
 
 	"github.com/akutz/memconn"
 	"github.com/opentracing/opentracing-go"
@@ -1045,16 +1045,17 @@ func (p *ReverseProxy) handoverRequestToGraphQLExecutionEngine(roundTripper *Tyk
 		}
 
 		// if this context vars are enabled and this is a supergraph, inject the sub request id header
-		if p.TykAPISpec.EnableContextVars && p.TykAPISpec.GraphQL.ExecutionMode == apidef.GraphQLExecutionModeSupergraph {
-			ctxData := ctxGetData(outreq)
-			if reqID, exists := ctxData["request_id"]; !exists {
-				log.Warn("context variables enabled but request_id missing")
-			} else if requestID, ok := reqID.(string); ok {
-				execOptions = append(execOptions, graphql.WithUpstreamHeaders(http.Header{
-					"X-Tyk-Parent-Request-Id": {requestID},
-				}))
-			}
-		}
+		// if p.TykAPISpec.EnableContextVars && p.TykAPISpec.GraphQL.ExecutionMode == apidef.GraphQLExecutionModeSupergraph {
+		// 	ctxData := ctxGetData(outreq)
+		// 	// if reqID, exists := ctxData["request_id"]; !exists {
+		// 	// 	log.Warn("context variables enabled but request_id missing")
+		// 	// } 
+		// 	// else if requestID, ok := reqID.(string); ok {
+		// 	// 	execOptions = append(execOptions, graphql.WithUpstreamHeaders(http.Header{
+		// 	// 		"X-Tyk-Parent-Request-Id": {requestID},
+		// 	// 	}))
+		// 	// }
+		// }
 
 		err = p.TykAPISpec.GraphQLExecutor.EngineV2.Execute(reqCtx, gqlRequest, &resultWriter, execOptions...)
 		if err != nil {

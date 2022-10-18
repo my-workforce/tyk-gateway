@@ -4,7 +4,7 @@ import (
 	"errors"
 	"net/http"
 
-	"github.com/TykTechnologies/graphql-go-tools/pkg/graphql"
+	"github.com/wundergraph/graphql-go-tools/pkg/graphql"
 
 	"github.com/TykTechnologies/tyk/header"
 	"github.com/TykTechnologies/tyk/user"
@@ -52,15 +52,15 @@ func (m *GraphQLGranularAccessMiddleware) ProcessRequest(w http.ResponseWriter, 
 		return nil, http.StatusOK
 	}
 
-	isIntrospection, err := gqlRequest.IsIntrospectionQueryStrict()
-	if err != nil {
-		return err, http.StatusInternalServerError
-	}
-	if isIntrospection {
-		if accessDef.DisableIntrospection {
-			return errIntrospectionDisabled, http.StatusForbidden
-		}
-	}
+	// isIntrospection, err := gqlRequest.IsIntrospectionQueryStrict()
+	// if err != nil {
+	// 	return err, http.StatusInternalServerError
+	// }
+	// if isIntrospection {
+	// 	if accessDef.DisableIntrospection {
+	// 		return errIntrospectionDisabled, http.StatusForbidden
+	// 	}
+	// }
 
 	checker := &GraphqlGranularAccessChecker{}
 	result := checker.CheckGraphqlRequestFieldAllowance(gqlRequest, &accessDef, m.Spec.GraphQLExecutor.Schema)

@@ -3,8 +3,8 @@ package gateway
 import (
 	"net/http"
 
-	"github.com/TykTechnologies/graphql-go-tools/pkg/graphql"
 	"github.com/sirupsen/logrus"
+	"github.com/wundergraph/graphql-go-tools/pkg/graphql"
 
 	"github.com/TykTechnologies/tyk/user"
 )

@@ -18,8 +18,8 @@ import (
 
 	uuid "github.com/satori/go.uuid"
 
-	"github.com/TykTechnologies/graphql-go-tools/pkg/engine/datasource/kafka_datasource"
-	"github.com/TykTechnologies/graphql-go-tools/pkg/execution/datasource"
+	"github.com/wundergraph/graphql-go-tools/pkg/engine/datasource/kafka_datasource"
+	"github.com/wundergraph/graphql-go-tools/pkg/execution/datasource"
 
 	"github.com/clbanning/mxj"
 

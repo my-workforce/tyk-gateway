@@ -3,24 +3,24 @@
 // The code below describes the Tyk Gateway API
 // Version: 2.8.0
 //
-//     Schemes: https, http
-//     Host: localhost
-//     BasePath: /tyk/
+//	Schemes: https, http
+//	Host: localhost
+//	BasePath: /tyk/
 //
-//     Consumes:
-//     - application/json
+//	Consumes:
+//	- application/json
 //
-//     Produces:
-//     - application/json
+//	Produces:
+//	- application/json
 //
-//     Security:
-//     - api_key:
+//	Security:
+//	- api_key:
 //
-//     SecurityDefinitions:
-//     api_key:
-//          type: apiKey
-//          name: X-Tyk-Authorization
-//          in: header
+//	SecurityDefinitions:
+//	api_key:
+//	     type: apiKey
+//	     name: X-Tyk-Authorization
+//	     in: header
 //
 // swagger:meta
 package gateway
@@ -63,7 +63,7 @@ import (
 	"github.com/TykTechnologies/tyk/storage"
 	"github.com/TykTechnologies/tyk/user"
 
-	gql "github.com/TykTechnologies/graphql-go-tools/pkg/graphql"
+	gql "github.com/wundergraph/graphql-go-tools/pkg/graphql"
 )
 
 var (

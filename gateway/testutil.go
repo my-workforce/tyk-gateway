@@ -33,8 +33,8 @@ import (
 	uuid "github.com/satori/go.uuid"
 	"golang.org/x/net/context"
 
-	"github.com/TykTechnologies/graphql-go-tools/pkg/execution/datasource"
-	"github.com/TykTechnologies/graphql-go-tools/pkg/graphql"
+	"github.com/wundergraph/graphql-go-tools/pkg/execution/datasource"
+	"github.com/wundergraph/graphql-go-tools/pkg/graphql"
 
 	"github.com/TykTechnologies/tyk/apidef"
 	"github.com/TykTechnologies/tyk/cli"
